@@ -1,0 +1,51 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Web Page</title>
+<style>
+  /* Mobile-first default */
+  body {font-family: Arial; margin: 1em;}
+  header {text-align: center; background: lightblue; padding: 1em;}
+  .container {display: flex; flex-direction: column;}
+  .box {
+    background: rgb(32, 44, 128);
+    margin: 1%;
+    padding: 1em;
+    flex: 1;
+    text-align: center;
+  }
+
+  /* Media Query for tablets */
+  @media (min-width: 600px) {
+    .container {flex-direction: row;}
+    .box {font-size: 1.1em;}
+  }
+
+  /* Media Query for desktops */
+  @media (min-width: 900px) {
+    body {margin: 2em 10%;}
+    header {background: rgb(37, 119, 37); color: white;}
+    .box {background: #80892f; border: 2px solid gray;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h2>Responsive Web Page</h2>
+</header>
+
+<section class="container">
+  <div class="box">Box 1</div>
+  <div class="box">Box 2</div>
+  <div class="box">Box 3</div>
+</section>
+
+
+</body>
+</html>

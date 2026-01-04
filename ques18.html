@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Child Node Manipulation</title>
+</head>
+<body>
+
+    <h2>DOM Child Node Manipulation</h2>
+    <div id="container">
+        <p>This is an existing paragraph.</p>
+    </div>
+
+    <button onclick="addElement()">Add Element</button>
+    <button onclick="modifyElement()">Modify Element</button>
+    <button onclick="removeElement()">Remove Element</button>
+
+    <script>
+        let newDiv; // global reference
+
+        // CREATE & APPEND
+        function addElement() {
+            newDiv = document.createElement("div");
+            newDiv.textContent = "I am a newly added div!";
+            newDiv.className = "box";
+
+            document.getElementById("container").appendChild(newDiv);
+        }
+
+        // MODIFY
+        function modifyElement() {
+            if (newDiv) {
+                newDiv.textContent = "Content modified using JavaScript!";
+                newDiv.style.backgroundColor = "lightgreen";
+            } else {
+                alert("Add the element first!");
+            }
+        }
+
+        // REMOVE
+        function removeElement() {
+            if (newDiv) {
+                document.getElementById("container").removeChild(newDiv);
+                newDiv = null;
+            } else {
+                alert("Nothing to remove!");
+            }
+        }
+    </script>
+
+</body>
+</html>

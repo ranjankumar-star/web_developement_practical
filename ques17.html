@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Listeners Demo</title>
+</head>
+<body>
+
+    <h2>Mouse & Keyboard Event Listener Demo</h2>
+
+    <div id="box">Hover / Click Me</div>
+
+    <button id="removeBtn">Remove Click Event</button>
+
+    <p id="output">Press any key...</p>
+
+    <script>
+        const box = document.getElementById("box");
+        const output = document.getElementById("output");
+        const removeBtn = document.getElementById("removeBtn");
+
+        // 🔹 Mouse click event
+        function handleClick() {
+            alert("Box clicked!");
+        }
+        box.addEventListener("click", handleClick);
+
+        // 🔹 Mouse over event
+        box.addEventListener("mouseover", () => {
+            box.style.backgroundColor = "lightgreen";
+            box.innerHTML = "Mouse Over";
+        });
+
+        // 🔹 Mouse out event
+        box.addEventListener("mouseout", () => {
+            box.style.backgroundColor = "lightblue";
+            box.innerHTML = "Hover / Click Me";
+        });
+
+        // 🔹 Keyboard event
+        document.addEventListener("keydown", (event) => {
+            output.innerHTML = "Key pressed: " + event.key;
+        });
+
+        // 🔹 Remove event listener
+        removeBtn.addEventListener("click", () => {
+            box.removeEventListener("click", handleClick);
+            alert("Click event removed!");
+        });
+    </script>
+
+</body>
+</html>

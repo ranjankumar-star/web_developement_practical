@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>DOM Manipulation Demo</title>
+</head>
+<body>
+
+    <h2 id = "title">Original Title</h2>
+
+    <p class="box">This is a paragraph.</p>
+
+    <button onclick="changeContent()">Click Me</button>
+
+    <script>
+        function changeContent() {
+
+            // 1. Using getElementById()
+            document.getElementById("title").innerHTML =
+                "Title Changed Using getElementById()";
+
+            // 2. Using querySelector()
+            document.querySelector(".box").innerHTML =
+                "Content updated using querySelector()";
+
+            // 3. Using innerHTML to insert HTML content
+            document.querySelector(".box").innerHTML +=
+                "<br><b>This text is added using innerHTML</b>";
+        }
+    </script>
+
+</body>
+</html>
+

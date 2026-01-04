@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditional statements</title>
+</head>
+<body>
+    <p>write JavaScript to demonstrate conditional statements and loop (for ,while, do..while)</p>
+    <button onclick="runProgram()">Run Program</button>
+
+    <pre id="output"></pre>
+
+    <script>
+      function runProgram (){
+     let output = "";
+
+            // Conditional Statements
+            let number = 10;
+
+            if (number > 0) {
+                output += "The number is positive\n";
+            } else if (number < 0) {
+                output += "The number is negative\n";
+            } else {
+                output += "The number is zero\n";
+            }
+
+            output += "\nFor Loop Output:\n";
+            // For Loop
+            for (let i = 1; i <= 5; i++) {
+                output += "Iteration: " + i + "\n";
+            }
+
+            output += "\nWhile Loop Output:\n";
+            // While Loop
+            let j = 1;
+            while (j <= 5) {
+                output += "Iteration: " + j + "\n";
+                j++;
+            }
+
+            output += "\nDo...While Loop Output:\n";
+            // Do...While Loop
+            let k = 1;
+            do {
+                output += "Iteration: " + k + "\n";
+                k++;
+            } while (k <= 5);
+
+            document.getElementById("output").textContent = output;
+        }
+    </script>
+</body>
+</html>
